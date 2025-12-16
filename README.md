@@ -1,69 +1,69 @@
 # Flight Price Analysis & Feature Engineering
 
-## Project Overview
-Analyzed 10,000 Plus flight booking records to identify key factors influencing ticket prices and transformed raw, inconsistent data into a clean, analysis-ready dataset suitable for analytics and predictive modeling.
-
-This project focuses on data quality, feature logic, and business interpretability rather than black-box modeling.
-
----
-
 ## Business Objective
-- Identify primary drivers of flight ticket pricing
-- Remove noisy and unreliable features
-- Engineer structured, meaningful variables from raw data
-- Deliver a modeling-ready dataset with zero missing values
+Analyze airline ticket pricing behavior to identify key cost drivers, eliminate data noise, and produce a clean, modeling-ready dataset for accurate price prediction and decision-making.
 
 ---
 
-## Tools & Skills Used
-- Python (Pandas, NumPy)
-- Exploratory Data Analysis (EDA)
-- Data Cleaning & Preprocessing
-- Feature Engineering
-- Categorical Encoding
-- Business Insight Generation
+## Dataset Overview
+- 10,000 plus real-world flight booking records
+- Target variable: Ticket Price (INR)
+- Mixed data types: categorical, temporal, numeric
+- Challenges: inconsistent time formats, price skewness, noisy categorical fields
 
 ---
 
-## Key Insights from Exploratory Data Analysis
-- Airline choice is the strongest pricing driver; premium carriers show significantly higher fare dispersion.
-- Number of stops has a direct impact on ticket prices, with non-stop flights consistently cheaper.
-- Longer journey durations correlate with higher fares, especially on multi-stop routes.
-- Departure timing influences price patterns; late-night and red-eye flights show distinct behavior.
-- Columns such as Route were dropped due to high inconsistency and low analytical value.
+## Tools & Technologies
+Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook
 
 ---
 
-## Data Cleaning & Standardization
-- Standardized inconsistent date and time formats across multiple columns
-- Parsed and normalized duration strings into structured numeric values
-- Split departure and arrival times into hour and minute components
-- Removed noisy, redundant, and text-heavy columns
+## Key Insights
+- Ticket prices are heavily right-skewed; median pricing is more reliable than mean for decision-making.
+- Non-stop flights are typically cheapest, while 1-stop flights often cost more than 2-stop flights due to airline pricing strategies.
+- Route complexity and total journey duration explain pricing better than source or destination alone.
+- Duration shows weak linear correlation with price, indicating rule-based airline pricing rather than cost-per-time models.
+
+---
+
+## Exploratory Data Analysis
+- Identified extreme price outliers (₹50K–₹80K) affecting summary statistics.
+- Compared pricing distributions across airlines, routes, stops, sources, and destinations.
+- Used distribution plots and boxplots to assess pricing volatility.
+
+---
+
+## Data Cleaning
+- Standardized date and time formats across all records.
+- Converted duration values into total journey minutes.
+- Removed redundant and noisy columns, example: raw route strings.
+- Ensured a consistent dataset with no missing values.
 
 ---
 
 ## Feature Engineering
-- Extracted day, month, and year from journey dates
-- Converted journey duration into total minutes
-- Encoded number of stops as numeric values
-- Cleaned and encoded Additional_Info
-- Applied one-hot encoding to all categorical variables
-- Removed raw text columns after feature extraction
+- Extracted day, month, and year from journey dates.
+- Split departure and arrival times into hour and minute components.
+- Encoded number of stops as ordinal numeric features.
+- One-hot encoded categorical variables.
+- Dropped raw text columns post feature extraction.
 
 ---
 
 ## Final Dataset
-The final dataset is:
-- Fully numeric and encoded
-- Free of missing values
-- Consistent and standardized
-- Ready for advanced analytics or machine learning
-
+- Fully numeric and machine-learning ready
+- Clean, consistent, and reproducible
+- Suitable for regression and tree-based models
 
 ---
 
-## Next Steps
-- Build regression and tree-based pricing models
-- Perform feature importance analysis
-- Apply explainability techniques
+## Future Steps
+- Build regression and ensemble models
+- Evaluate feature importance and model explainability
+- Apply SHAP for pricing driver interpretation
+
+---
+
+## Business Value
+Demonstrates how structured EDA and feature engineering directly improve model reliability, pricing insights, and downstream analytics.
 
